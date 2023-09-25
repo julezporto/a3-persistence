@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Plant Watering Tracker - Main Tracker Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/main.js"></script>
+    <link id="page-theme" rel="stylesheet" href="/css/sakura.css" />
+    <link rel="stylesheet" href="css/accessible.css" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  </head>
+
+  <body>
+    <div class="empty-space"></div>
+    <header>
+      <!-- Main header and description -->
+      <h1>Plant Watering Tracker</h1>
+      <p>
+        Welcome to the <b>Plant Watering Tracker</b>! Input your plant
+        information below and the Tracker will tell you the next date that your
+        plant must be watered. You can update plant information using the 'edit'
+        button or delete a plant using the 'delete' button of the corresponding row.
+      </p>
+    </header>
+    <div class="empty-space"></div>
+    <main>
+      <form id="newPlantForm" aria-labelledby="newPlantFormTitle">
+        <div id="formBox" class="inputBox-parent">
+          <div id="fieldBox" class="inputBox-child">
+            <!-- New Plant Form -->
+            <h2>Add a New Plant</h2>
+            <p>Required fields are marked with an *</p>
+
+            <!-- User inputs plant name -->
+            <label for="plantName" class="req">Plant name</label>
+            <input
+              type="text"
+              required
+              id="plantName"
+              name="plantName"
+              placeholder="plant name here"
+              aria-required="true"
+              aria-describedby="plantNameDescription"
+            />
+
+            <!-- User selects plant type -->
+            <label for="plantType" class="req">Choose a plant type</label>
+            <select
+              name="plantType"
+              id="plantType"
+              tabindex="0"
+              aria-required="true"
+              aria-describedby="plantTypeDescription"
+              required
+            >
+              <option value="Flowering Plant">Flowering Plant</option>
+              <option value="Succulent or Cactus">Succulent or Cactus</option>
+              <option value="Indoor Foliage">Indoor Foliage</option>
+              <option value="Herb">Herb</option>
+              <option value="Fruit Tree">Fruit Tree</option>
+              <option value="Shrub or Bush">Shrub or Bush</option>
+              <option value="Vegetable">Vegetable</option>
+              <option value="Tropical">Tropical</option>
+              <option value="Aquatic">Aquatic</option>
+              <option value="Bamboo">Bamboo</option>
+              <option value="Groundcover">Groundcover</option>
+              <option value="Air Plant">Air Plant</option>
+              <option value="Climbing or Vine">Climbing or Vine</option>
+              <option value="Bonsai Tree">Bonsai Tree</option>
+              <option value="Fern">Fern</option>
+            </select>
+
+            <!-- User selects last date of watering -->
+            <label for="lastWatered" class="req">Last Date of Watering</label>
+            <input
+              type="date"
+              required
+              id="lastWatered"
+              name="lastWatered"
+              tabindex="0"
+              aria-required="true"
+              aria-describedby="lastWateredDescription"
+            />
+
+            <br />
+            <!-- Submit button -->
+            <button id="submitButton" aria-label="Submit">Submit</button>
+          </div>
+          <div id="picBox" class="inputBox-child">
+            <img
+              id="plantPic"
+              src="https://cdn.glitch.global/51894676-3052-4c38-a67c-c69ae8df9fbe/annie-spratt-hX_hf2lPpUU-unsplash.jpg?v=1695596933302"
+              alt=""
+            />
+          </div>
+        </div>
+      </form>
+
+      <div class="empty-space"></div>
+      <div id="plantArchive" aria-labelledby="plantArchiveTitle">
+        <!-- Plant Archive -->
+        <h2>Plant Archive and Watering Dates</h2>
+
+        <!-- Table of Data -->
+        <table id="plantTable" aria-labelledby="plantTableTitle">
+          <col class="col1"/>
+          <col class="col2"/>
+          <col class="col3"/>
+          <col class="col4"/>
+          <col class="col5"/>
+          <col class="col6"/>
+          <thead>
+            <tr>
+              <!-- Plant Number Column (index) -->
+              <th id="plantNum">Plant Number</th>
+              <!-- Plant Name -->
+              <th>Plant Name</th>
+              <!-- Plant Type -->
+              <th>Plant Type</th>
+              <!-- Date of Last Watering -->
+              <th>Last Watered</th>
+              <!-- Date of Next Watering -->
+              <th>Next Water</th>
+              <!-- Edit button -->
+              <th>Edit</th>
+              <!-- Delete button -->
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="plantTableBody" aria-live="polite"></tbody>
+        </table>
+      </div>
+      <!-- Edit Form, display: none -->
+      <form
+        id="editPlantForm"
+        style="display: none"
+        aria-labelledby="editPlantFormTitle"
+        aria-hidden="true"
+      >
+        <h2>Edit Plant</h2>
+
+        <!-- User updates plant name -->
+        <label for="editPlantName">Plant name</label>
+        <input
+          type="text"
+          name="editPlantName"
+          id="editPlantName"
+          aria-labelledby="editPlantName editPlantFormTitle"
+        />
+
+        <!-- User updates plant type -->
+        <label for="editPlantType">Choose a plant type</label>
+        <select
+          name="editPlantType"
+          id="editPlantType"
+          tabindex="0"
+          aria-labelledby="editPlantType editPlantFormTitle"
+        >
+          <option value="Flowering Plant">Flowering Plant</option>
+          <option value="Succulent or Cactus">Succulent or Cactus</option>
+          <option value="Indoor Foliage">Indoor Foliage</option>
+          <option value="Herb">Herb</option>
+          <option value="Fruit Tree">Fruit Tree</option>
+          <option value="Shrub or Bush">Shrub or Bush</option>
+          <option value="Vegetable">Vegetable</option>
+          <option value="Tropical">Tropical</option>
+          <option value="Aquatic">Aquatic</option>
+          <option value="Bamboo">Bamboo</option>
+          <option value="Groundcover">Groundcover</option>
+          <option value="Air Plant">Air Plant</option>
+          <option value="Climbing or Vine">Climbing or Vine</option>
+          <option value="Bonsai Tree">Bonsai Tree</option>
+          <option value="Fern">Fern</option>
+        </select>
+
+        <!-- User updates last date of watering -->
+        <label for="editLastWatered">Last Date of Watering</label>
+        <input
+          type="date"
+          name="editLastWatered"
+          id="editLastWatered"
+          tabindex="0"
+          aria-labelledby="editLastWatered editPlantFormTitle"
+        />
+        <br />
+
+        <!-- Update button -->
+        <button id="updateButton" aria-label="Update">Update</button>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer id="copyright">&copy; Copyright 2023 Juliana Porto</footer>
+  </body>
+</html>

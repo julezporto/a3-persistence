@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <title>Plant Watering Tracker - Login</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link id="page-theme" rel="stylesheet" href="/css/sakura.css" />
+    <link rel="stylesheet" href="css/accessible.css" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  </head>
+  <body>
+    <h1>
+      Log in
+    </h1>
+    <form action="/login" method="POST">
+      <input type="text" name="username" placeholder="username" />
+      <input type="password" name="password" placeholder="password" />
+      <input type="submit" value="login" />
+      <p id="tocreateaccount">
+        Don't have an account? Create one below.
+      </p>
+      <input id="redirectButton" type="button" value="Create an account" />
+    </form>
+    <script type="text/javascript">
+      document.getElementById("redirectButton").onclick = function () {
+      location.href = "https://a3-juliana-porto.glitch.me/createUser.html"; };
+    </script>
+
+    {{{msg}}}
+
+  </body>
+</html>

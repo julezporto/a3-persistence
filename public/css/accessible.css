@@ -1,0 +1,42 @@
+.req:after {
+  content: " *";
+  color: red;
+}
+#plantPic {
+  width: 75%;
+}
+.inputBox-parent {
+  display: flex;
+  width: 100%;
+}
+.inputBox-child {
+  flex: 1;
+}
+#tocreateaccount {
+  padding-top: 5%;
+}
+table {
+  table-layout: fixed ;
+  width: 100% ;
+}
+td {
+  width: 20%;
+}
+.col1 {
+  visibility: collapse;
+}
+.col2 {
+  width: 20%;
+}
+.col3 {
+  width: 20%;
+}
+.col4 {
+  width: 20%;
+}
+.col5 {
+  width: 20%;
+}
+.col6 {
+  width: 20%;
+}
