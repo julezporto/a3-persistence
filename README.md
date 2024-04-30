@@ -1,5 +1,7 @@
 ## Plant Watering Tracker
 
+_Note_: This web application was created by Glitch and sometimes goes down randomly :(
+
 Juliana Porto
 [https://a3-juliana-porto.glitch.me/](https://a3-juliana-porto.glitch.me/)
 
